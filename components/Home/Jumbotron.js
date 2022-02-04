@@ -19,7 +19,7 @@ function Jumbotron() {
               fontSize={"28px"}
               fontWeight={"bold"}
             >
-              Product DATA
+              Product Data Co.
             </Typography>
             <Typography color={"white"} component={"p"} variant="p">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
@@ -28,9 +28,10 @@ function Jumbotron() {
               debitis officiis animi?
             </Typography>
           </Grid>
-          <Grid item md={8} alignContent={"flex-end"}>
+          <Grid item md={8} display={"flex"} alignContent={"flex-end"}>
             <img
               width={"70%"}
+              style={{ display: "block", margin: "auto" }}
               src="https://freeonlinesurveys.com/wp-content/uploads/2019/09/Online-Survey-Tool-Features.png"
             />
           </Grid>

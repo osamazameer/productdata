@@ -7,7 +7,10 @@ import {
   CardActions,
   Button,
   Typography,
+  Paper,
+  Chip,
 } from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
 
 const ProductGrid = ({ products }) => {
@@ -29,7 +32,13 @@ const ProductGrid = ({ products }) => {
                     <Typography gutterBottom variant="h5" component="div">
                       {product.title} <small>${product.price}</small>
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Chip label={product.category} variant="outlined" />
+                    <Typography
+                      p={2}
+                      my={2}
+                      variant="body2"
+                      color="text.secondary"
+                    >
                       {product.description}
                     </Typography>
                   </CardContent>

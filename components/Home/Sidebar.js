@@ -60,10 +60,10 @@ function Sidebar() {
         >
           <Typography>Filters: </Typography>
           <ListItem>
-            <ListItemIcon>
+            {/* <ListItemIcon>
               <WifiIcon />
-            </ListItemIcon>
-            <ListItemText id="switch-list-label-wifi" primary="Wi-Fi" />
+            </ListItemIcon> */}
+            <ListItemText id="switch-list-label-wifi" primary="Used" />
             <Switch
               edge="end"
               // onChange={handleToggle('wifi')}
@@ -74,12 +74,26 @@ function Sidebar() {
             />
           </ListItem>
           <ListItem>
-            <ListItemIcon>
+            {/* <ListItemIcon>
+              <WifiIcon />
+            </ListItemIcon> */}
+            <ListItemText id="switch-list-label-wifi" primary="On Sale" />
+            <Switch
+              edge="end"
+              // onChange={handleToggle('wifi')}
+              // checked={checked.indexOf('wifi') !== -1}
+              inputProps={{
+                "aria-labelledby": "switch-list-label-wifi",
+              }}
+            />
+          </ListItem>
+          <ListItem>
+            {/* <ListItemIcon>
               <BluetoothIcon />
-            </ListItemIcon>
+            </ListItemIcon> */}
             <ListItemText
               id="switch-list-label-bluetooth"
-              primary="Bluetooth"
+              primary="Retailable"
             />
             <Switch
               edge="end"
