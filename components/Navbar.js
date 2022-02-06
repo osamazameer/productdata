@@ -78,12 +78,12 @@ const Navbar = () => {
 
   const pages = [
     {
-      name: "Sign In",
-      link: "signin",
+      name: "Start A Trial",
+      link: "signup",
     },
     {
-      name: "Sign Up",
-      link: "signup",
+      name: "Sign In",
+      link: "signin",
     },
     {
       name: "Add Product",
