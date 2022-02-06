@@ -1,4 +1,5 @@
 import * as React from 'react';
+// import { useState, useEffect } as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,14 +18,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function signin() {
+
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const res = await fetch('/api/login',{
+      method: POST,
+      body:JSON.stringify({username, password})
+    }).then((res)=>res.json())
   };
 
   return (
@@ -46,14 +47,18 @@ export default function signin() {
             Sign in
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <form action='api/login'>
             <TextField
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="username"
+              value={username}
+
+              label="Username"
+              name="username"
+              autoComplete="username"
+              onChange={(e) => setUsername(e.target.value)}
               autoFocus
             />
             <TextField
@@ -61,8 +66,11 @@ export default function signin() {
               required
               fullWidth
               name="password"
+              value={password}
               label="Password"
               type="password"
+              onChange={(e) => setPassword(e.target.value)}
+
               id="password"
               autoComplete="current-password"
             />
@@ -90,6 +98,7 @@ export default function signin() {
                 </Link>
               </Grid>
             </Grid>
+            </form>
           </Box>
         </Box>
 
