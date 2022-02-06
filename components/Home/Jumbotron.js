@@ -5,7 +5,8 @@ function Jumbotron() {
   return (
     <Box
       style={{
-        backgroundImage: "linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)",
+        backgroundColor: "#ff4e00",
+        backgroundImage: "linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)",
       }}
     >
       <Container>
